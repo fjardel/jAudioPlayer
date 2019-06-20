@@ -193,6 +193,8 @@ public class Frontend extends javax.swing.JFrame {
     private void buttonStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonStopActionPerformed
         
         back.stopAudio();
+        check = true;
+        buttonPlayPlause.setText(">");
         
     }//GEN-LAST:event_buttonStopActionPerformed
     
