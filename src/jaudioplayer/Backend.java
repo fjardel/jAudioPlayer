@@ -1,6 +1,8 @@
 package jaudioplayer;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -11,16 +13,9 @@ public class Backend extends Thread{
 
     private JFileChooser fileExplorer = new JFileChooser();
     private FileNameExtensionFilter filter = new FileNameExtensionFilter(".mp3", "mp3");
-    private String pathAudio = "";
     private Player player;
-    
-    Backend(){
         
-        playerAudio();
-        
-    }
-    
-    protected void fileExplorer() {
+    protected void fileExplorer() throws FileNotFoundException {
 
         fileExplorer.setDialogTitle("Audio Explorer");
         fileExplorer.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -30,19 +25,18 @@ public class Backend extends Thread{
 
         if (result == JFileChooser.APPROVE_OPTION) {
 
-            File audio = fileExplorer.getSelectedFile();
-            pathAudio = audio.getPath();
-            //playerAudio();
+            File file = fileExplorer.getSelectedFile();
+            playerAudio(file);
 
         }
 
     }
     
-    private void playerAudio() {
+    private void playerAudio(File file) throws FileNotFoundException {
 
         try {
 
-            InputStream audio = this.getClass().getResourceAsStream("/MP3/Switchfoot - You.mp3");
+            InputStream audio = new FileInputStream(file); 
             player = new Player(audio);
 
         } catch (JavaLayerException e) {
@@ -61,13 +55,15 @@ public class Backend extends Thread{
 
         } catch (JavaLayerException e) {
             
-            
+            //
             
         }
 
     }
 
     protected void pauseAudio() {
+        
+        //
 
     }
 

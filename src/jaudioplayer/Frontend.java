@@ -1,5 +1,9 @@
 package jaudioplayer;
 
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Frontend extends javax.swing.JFrame {
 
     public Frontend() {
@@ -159,7 +163,15 @@ public class Frontend extends javax.swing.JFrame {
 
     private void buttonFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFileActionPerformed
         
-        //back.fileExplorer();
+        try {
+            
+            back.fileExplorer();
+            
+        } catch (FileNotFoundException ex) {
+            
+            Logger.getLogger(Frontend.class.getName()).log(Level.SEVERE, null, ex);
+        
+        }
         
     }//GEN-LAST:event_buttonFileActionPerformed
 
