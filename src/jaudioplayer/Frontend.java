@@ -163,6 +163,8 @@ public class Frontend extends javax.swing.JFrame {
 
     private void buttonFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFileActionPerformed
         
+        /* Metodo para seleção de arquivos */
+        
         try {
             
             back.fileExplorer();
@@ -177,7 +179,7 @@ public class Frontend extends javax.swing.JFrame {
 
     private void buttonPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPlayActionPerformed
         
-        back.playAudio();
+        back.playAudio();//Executando o arquivo de audio
         
     }//GEN-LAST:event_buttonPlayActionPerformed
 
