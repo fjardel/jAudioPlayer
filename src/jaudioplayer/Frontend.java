@@ -159,7 +159,7 @@ public class Frontend extends javax.swing.JFrame {
 
     private void buttonFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFileActionPerformed
         
-        back.fileExplorer();
+        //back.fileExplorer();
         
     }//GEN-LAST:event_buttonFileActionPerformed
 
