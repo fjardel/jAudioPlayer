@@ -16,6 +16,7 @@ public class Backend extends Thread {//Estendendo a classe Thread
     private JFileChooser fileExplorer = new JFileChooser();
     private FileNameExtensionFilter filter = new FileNameExtensionFilter(".mp3", "mp3");
     private Player player;
+    protected String nameAudio = "";
 
     protected void fileExplorer() throws FileNotFoundException {//Método para selecionar arquivo
 
@@ -28,6 +29,7 @@ public class Backend extends Thread {//Estendendo a classe Thread
         if (result == JFileChooser.APPROVE_OPTION) {//Se algum arquivo foi selecionado...
 
             File file = fileExplorer.getSelectedFile();//...Uma variavel do tipo File é criada
+            nameAudio = file.getName();//Recebendo o nome do arquivo
             loadAudio(file);//Chama a classe que carrega o arquivo enviado o File
 
         }

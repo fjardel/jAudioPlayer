@@ -5,14 +5,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Frontend extends javax.swing.JFrame {
-
+    
     public Frontend() {
         
         initComponents();
-    
+        
     }
-
+    
     private Backend back = new Backend();
+    private boolean check = true;
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -21,14 +22,14 @@ public class Frontend extends javax.swing.JFrame {
         panelLayout = new javax.swing.JPanel();
         timerAudio = new javax.swing.JLabel();
         buttonPrevious = new javax.swing.JButton();
-        buttonPlay = new javax.swing.JButton();
-        buttonPause = new javax.swing.JButton();
+        buttonPlayPlause = new javax.swing.JButton();
         buttonStop = new javax.swing.JButton();
         buttonNext = new javax.swing.JButton();
         progressBar = new javax.swing.JProgressBar();
         buttonFile = new javax.swing.JButton();
         buttonSequential = new javax.swing.JButton();
         buttonRandom = new javax.swing.JButton();
+        nameAudio = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("jAudioPlayer");
@@ -42,19 +43,11 @@ public class Frontend extends javax.swing.JFrame {
         buttonPrevious.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         buttonPrevious.setText("|<");
 
-        buttonPlay.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        buttonPlay.setText(">");
-        buttonPlay.addActionListener(new java.awt.event.ActionListener() {
+        buttonPlayPlause.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        buttonPlayPlause.setText(">");
+        buttonPlayPlause.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonPlayActionPerformed(evt);
-            }
-        });
-
-        buttonPause.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        buttonPause.setText("||");
-        buttonPause.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonPauseActionPerformed(evt);
+                buttonPlayPlauseActionPerformed(evt);
             }
         });
 
@@ -88,32 +81,35 @@ public class Frontend extends javax.swing.JFrame {
         buttonRandom.setText("X");
         buttonRandom.setBorder(null);
 
+        nameAudio.setFont(new java.awt.Font("Verdana", 1, 10)); // NOI18N
+        nameAudio.setText("----");
+
         javax.swing.GroupLayout panelLayoutLayout = new javax.swing.GroupLayout(panelLayout);
         panelLayout.setLayout(panelLayoutLayout);
         panelLayoutLayout.setHorizontalGroup(
             panelLayoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLayoutLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelLayoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelLayoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panelLayoutLayout.createSequentialGroup()
                         .addComponent(timerAudio)
                         .addGap(18, 18, 18)
                         .addComponent(buttonPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonPause, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonPlayPlause, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buttonStop, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelLayoutLayout.createSequentialGroup()
-                        .addComponent(buttonFile, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonSequential, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(buttonFile, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonSequential, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nameAudio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelLayoutLayout.setVerticalGroup(
@@ -123,19 +119,19 @@ public class Frontend extends javax.swing.JFrame {
                 .addGroup(panelLayoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLayoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(buttonPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buttonPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buttonPause, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonPlayPlause, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(buttonStop, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(timerAudio, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(panelLayoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonFile, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonSequential, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(buttonFile, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSequential, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameAudio, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,8 +147,8 @@ public class Frontend extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelLayout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panelLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         getAccessibleContext().setAccessibleDescription("Player de audio feito na linguagem Java");
@@ -162,39 +158,44 @@ public class Frontend extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFileActionPerformed
-        
+
         /* Metodo para seleção de arquivos */
-        
         try {
             
             back.fileExplorer();
+            nameAudio.setText(back.nameAudio);
             
         } catch (FileNotFoundException ex) {
             
             Logger.getLogger(Frontend.class.getName()).log(Level.SEVERE, null, ex);
-        
+            
         }
         
     }//GEN-LAST:event_buttonFileActionPerformed
 
-    private void buttonPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPlayActionPerformed
+    private void buttonPlayPlauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPlayPlauseActionPerformed
+         
+        if (check == true) {
+            
+            check = false;
+            back.playAudio();//Executando o arquivo de audio
+            buttonPlayPlause.setText("||");
+            
+        } else if (check == false) {
+            
+            check = true;
+            buttonPlayPlause.setText(">");
+            
+        }
         
-        back.playAudio();//Executando o arquivo de audio
-        
-    }//GEN-LAST:event_buttonPlayActionPerformed
-
-    private void buttonPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPauseActionPerformed
-        
-        back.pauseAudio();
-        
-    }//GEN-LAST:event_buttonPauseActionPerformed
+    }//GEN-LAST:event_buttonPlayPlauseActionPerformed
 
     private void buttonStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonStopActionPerformed
         
         back.stopAudio();
         
     }//GEN-LAST:event_buttonStopActionPerformed
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -233,12 +234,12 @@ public class Frontend extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonFile;
     private javax.swing.JButton buttonNext;
-    private javax.swing.JButton buttonPause;
-    private javax.swing.JButton buttonPlay;
+    private javax.swing.JButton buttonPlayPlause;
     private javax.swing.JButton buttonPrevious;
     private javax.swing.JButton buttonRandom;
     private javax.swing.JButton buttonSequential;
     private javax.swing.JButton buttonStop;
+    private javax.swing.JLabel nameAudio;
     private javax.swing.JPanel panelLayout;
     private javax.swing.JProgressBar progressBar;
     private javax.swing.JLabel timerAudio;

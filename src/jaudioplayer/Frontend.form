@@ -39,8 +39,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelLayout" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="panelLayout" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,28 +60,28 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="timerAudio" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="buttonPrevious" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="buttonPlay" min="-2" pref="55" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="buttonPause" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="buttonPlayPlause" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="buttonStop" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="buttonNext" min="-2" pref="55" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="progressBar" alignment="0" min="-2" pref="450" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="buttonFile" min="-2" pref="15" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="buttonSequential" min="-2" pref="15" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="buttonRandom" min="-2" pref="15" max="-2" attributes="0"/>
+                          <Component id="buttonFile" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="buttonSequential" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="buttonRandom" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="nameAudio" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="progressBar" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -94,22 +94,22 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="buttonPrevious" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="buttonPlay" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="buttonPause" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="buttonPlayPlause" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="buttonStop" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="buttonNext" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Component id="timerAudio" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="progressBar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="progressBar" min="-2" pref="5" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="buttonFile" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="buttonSequential" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="buttonRandom" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                      <Component id="buttonFile" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="buttonSequential" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="buttonRandom" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="nameAudio" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -131,7 +131,7 @@
             <Property name="text" type="java.lang.String" value="|&lt;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="buttonPlay">
+        <Component class="javax.swing.JButton" name="buttonPlayPlause">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="12" style="1"/>
@@ -139,18 +139,7 @@
             <Property name="text" type="java.lang.String" value="&gt;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonPlayActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="buttonPause">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Verdana" size="12" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="||"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonPauseActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonPlayPlauseActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonStop">
@@ -213,6 +202,14 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nameAudio">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="10" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="----"/>
           </Properties>
         </Component>
       </SubComponents>
