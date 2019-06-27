@@ -58,7 +58,7 @@ public class FrontPlayer extends JFrame {
 		JLabel lbTime = new JLabel("00:00");
 		lbTime.setVerticalAlignment(SwingConstants.BOTTOM);
 		lbTime.setHorizontalAlignment(SwingConstants.CENTER);
-		lbTime.setFont(new Font("Consolas", Font.BOLD, 40));
+		lbTime.setFont(new Font("Dialog", Font.PLAIN, 38));
 		lbTime.setBounds(20, 36, 120, 55);
 		contentPane.add(lbTime);
 
