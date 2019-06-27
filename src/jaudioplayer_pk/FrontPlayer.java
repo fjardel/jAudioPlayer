@@ -1,15 +1,11 @@
 package jaudioplayer_pk;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import javax.swing.JProgressBar;
 import java.awt.event.ActionListener;
@@ -19,7 +15,7 @@ import javax.swing.SwingConstants;
 public class FrontPlayer extends JFrame {
 
 	private JPanel contentPane;
-	private InputFile inputAnalyzer = new InputFile();
+	private InputFile inputFile = new InputFile();
 	private BackPlayer back = new BackPlayer();
 	private boolean check = true;
 
@@ -135,9 +131,14 @@ public class FrontPlayer extends JFrame {
 		btnNewFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				String input = JOptionPane.showInputDialog("Insira o caminho:");
-				back.load(inputAnalyzer.createFile(input));
-				lbNameFile.setText(inputAnalyzer.getName());
+				inputFile.explorerFile();
+
+				if (!inputFile.fileChooser.equals("")) {
+
+					back.load(inputFile.createFile(inputFile.fileChooser));
+					lbNameFile.setText(inputFile.getName());
+
+				}
 
 			}
 		});
