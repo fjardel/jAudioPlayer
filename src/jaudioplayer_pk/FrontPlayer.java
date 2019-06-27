@@ -51,7 +51,7 @@ public class FrontPlayer extends JFrame {
 		setResizable(false);
 		setTitle("jAudioPlayer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 420, 160);
+		setBounds(100, 100, 428, 160);
 		setLocationRelativeTo(null);
 
 		contentPane = new JPanel();
@@ -72,7 +72,7 @@ public class FrontPlayer extends JFrame {
 		contentPane.add(lbNameFile);
 
 		JProgressBar progressBar = new JProgressBar();
-		progressBar.setBounds(20, 72, 381, 14);
+		progressBar.setBounds(20, 75, 381, 14);
 		contentPane.add(progressBar);
 
 		JButton btnPrevious = new JButton("|<");
@@ -142,7 +142,7 @@ public class FrontPlayer extends JFrame {
 			}
 		});
 		btnNewFile.setFont(new Font("Consolas", Font.BOLD, 15));
-		btnNewFile.setBounds(20, 95, 50, 20);
+		btnNewFile.setBounds(20, 98, 50, 20);
 		contentPane.add(btnNewFile);
 
 		JButton btnLoop = new JButton("o");
@@ -152,7 +152,7 @@ public class FrontPlayer extends JFrame {
 			}
 		});
 		btnLoop.setFont(new Font("Consolas", Font.BOLD, 15));
-		btnLoop.setBounds(81, 95, 50, 20);
+		btnLoop.setBounds(81, 98, 50, 20);
 		contentPane.add(btnLoop);
 
 	}
