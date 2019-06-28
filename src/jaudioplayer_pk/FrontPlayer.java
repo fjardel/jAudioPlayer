@@ -47,7 +47,7 @@ public class FrontPlayer extends JFrame {
 		setResizable(false);
 		setTitle("jAudioPlayer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 428, 160);
+		setBounds(100, 100, 428, 190);
 		setLocationRelativeTo(null);
 
 		contentPane = new JPanel();
@@ -58,17 +58,17 @@ public class FrontPlayer extends JFrame {
 		JLabel lbTime = new JLabel("00:00");
 		lbTime.setVerticalAlignment(SwingConstants.BOTTOM);
 		lbTime.setHorizontalAlignment(SwingConstants.CENTER);
-		lbTime.setFont(new Font("Consolas", Font.PLAIN, 37));
-		lbTime.setBounds(10, 11, 130, 50);
+		lbTime.setFont(new Font("Consolas", Font.BOLD, 40));
+		lbTime.setBounds(20, 36, 120, 55);
 		contentPane.add(lbTime);
 
 		JLabel lbNameFile = new JLabel("--:--");
 		lbNameFile.setFont(new Font("Consolas", Font.BOLD, 15));
-		lbNameFile.setBounds(142, 98, 230, 14);
+		lbNameFile.setBounds(20, 11, 381, 14);
 		contentPane.add(lbNameFile);
 
 		JProgressBar progressBar = new JProgressBar();
-		progressBar.setBounds(20, 75, 381, 14);
+		progressBar.setBounds(20, 102, 381, 14);
 		contentPane.add(progressBar);
 
 		JButton btnPrevious = new JButton("|<");
@@ -77,7 +77,7 @@ public class FrontPlayer extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnPrevious.setBounds(148, 11, 55, 55);
+		btnPrevious.setBounds(150, 36, 55, 55);
 		contentPane.add(btnPrevious);
 
 		JButton btnPlayPause = new JButton("|>");
@@ -101,7 +101,7 @@ public class FrontPlayer extends JFrame {
 
 			}
 		});
-		btnPlayPause.setBounds(214, 11, 55, 55);
+		btnPlayPause.setBounds(215, 36, 55, 55);
 		contentPane.add(btnPlayPause);
 
 		JButton btnStop = new JButton("[]");
@@ -115,7 +115,7 @@ public class FrontPlayer extends JFrame {
 
 			}
 		});
-		btnStop.setBounds(280, 11, 55, 55);
+		btnStop.setBounds(281, 36, 55, 55);
 		contentPane.add(btnStop);
 
 		JButton btnNext = new JButton(">|");
@@ -124,7 +124,7 @@ public class FrontPlayer extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNext.setBounds(346, 11, 55, 55);
+		btnNext.setBounds(346, 36, 55, 55);
 		contentPane.add(btnNext);
 
 		JButton btnNewFile = new JButton("+");
@@ -143,7 +143,7 @@ public class FrontPlayer extends JFrame {
 			}
 		});
 		btnNewFile.setFont(new Font("Consolas", Font.BOLD, 15));
-		btnNewFile.setBounds(20, 98, 50, 20);
+		btnNewFile.setBounds(20, 127, 50, 20);
 		contentPane.add(btnNewFile);
 
 		JButton btnLoop = new JButton("o");
@@ -153,7 +153,7 @@ public class FrontPlayer extends JFrame {
 			}
 		});
 		btnLoop.setFont(new Font("Consolas", Font.BOLD, 15));
-		btnLoop.setBounds(81, 98, 50, 20);
+		btnLoop.setBounds(80, 127, 50, 20);
 		contentPane.add(btnLoop);
 
 	}
